@@ -1,0 +1,38 @@
+# =========================
+# 项目基础配置
+# =========================
+project:
+  name: DocAgent
+  version: 0.1.0
+  env: dev   # dev / test / prod
+
+# =========================
+# 日志配置
+# =========================
+logging:
+  level: DEBUG   # DEBUG / INFO / WARNING / ERROR
+  format: "%(asctime)s.%(msecs)03d [%(levelname)s] %(name)s: %(message)s"
+  datefmt: "%Y-%m-%d %H:%M:%S"
+  # file: logs/app.log
+
+
+# =========================
+# 外部依赖
+# =========================
+ocr:
+  url: https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation
+  model: qwen-vl-plus
+  api_key: ${API_KEY}
+  md_save_path: E:\code\python\exame\DocAgent\data\output
+  md_file: E:\code\python\exame\DocAgent\data\output\result_20260619_123024.md
+agent:
+  url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  model: qwen-plus
+  api_key: ${API_KEY} 
+
+# =========================
+# DB
+# =========================
+knoweldge:
+  db_path: E:\code\python\exame\DocAgent\data\db #cache chroma DB
+  mode_path: E:\code\python\exame\DocAgent\lib\rag_model #cache embeding model
